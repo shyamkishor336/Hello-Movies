@@ -30,3 +30,9 @@ tmdb_api_key=ADD_YOUR_API_KEY_HERE
 ![screenshot-1654264727023](https://user-images.githubusercontent.com/60429923/171869707-d6fe02c5-e059-4817-a69e-ef04d52940f8.png)
 ![screenshot-1654264742270](https://user-images.githubusercontent.com/60429923/171869714-d57c2c59-82d0-4215-8aa4-71aad9025fe2.png)
 ![screenshot-1654264756406](https://user-images.githubusercontent.com/60429923/171869719-1eafd123-1f86-40d3-b00b-ba48557e84c0.png)
+
+# SEE APP PREVIEW VIDEO
+https://youtu.be/ygmcjAkhwYU
+
+# CHECKOUT APK FILE
+https://drive.google.com/file/d/1fGKz5xTXbpYitpAosy6ua8GZBcD60CL-/view?usp=sharing
