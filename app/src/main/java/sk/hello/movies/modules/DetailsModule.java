@@ -7,9 +7,8 @@ import dagger.Provides;
 import sk.hello.movies.interfaces.MovieDetailsInterface;
 import sk.hello.movies.interfaces.FavoritesInterface;
 import sk.hello.movies.interfaces.DetailsScope;
-import sk.hello.movies.interfacers.MovieDetailsInteractorImpl;
-import sk.hello.movies.interfaces.MovieDetailsPresenter;
-import sk.hello.movies.interfacers.MovieDetailsPresenterImpl;
+import sk.hello.movies.interfacers.MovieDetailsInterfacer;
+import sk.hello.movies.interfacers.MovieDetailsPresenter;
 import sk.hello.movies.utils.TmdbWebService;
 
 
@@ -18,13 +17,13 @@ public class DetailsModule {
     @Provides
     @DetailsScope
     MovieDetailsInterface provideInteractor(TmdbWebService tmdbWebService) {
-        return new MovieDetailsInteractorImpl(tmdbWebService);
+        return new MovieDetailsInterfacer(tmdbWebService);
     }
 
     @Provides
     @DetailsScope
-    MovieDetailsPresenter providePresenter(MovieDetailsInterface detailsInteractor,
-                                           FavoritesInterface favoritesInterface) {
-        return new MovieDetailsPresenterImpl(detailsInteractor, favoritesInterface);
+    sk.hello.movies.interfaces.MovieDetailsPresenter providePresenter(MovieDetailsInterface detailsInteractor,
+                                                                      FavoritesInterface favoritesInterface) {
+        return new MovieDetailsPresenter(detailsInteractor, favoritesInterface);
     }
 }

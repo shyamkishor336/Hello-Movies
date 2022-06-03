@@ -3,10 +3,9 @@ package sk.hello.movies.modules;
 
 import dagger.Module;
 import dagger.Provides;
-import sk.hello.movies.interfacers.MoviesListingInteractorImpl;
-import sk.hello.movies.interfacers.MoviesListingPresenterImpl;
+import sk.hello.movies.interfacers.MoviesListingInterfacer;
+import sk.hello.movies.interfacers.MoviesListingPresenter;
 import sk.hello.movies.interfaces.MoviesListingInterface;
-import sk.hello.movies.interfaces.MoviesListingPresenter;
 import sk.hello.movies.utils.SortingOptionStore;
 import sk.hello.movies.utils.TmdbWebService;
 import sk.hello.movies.interfaces.FavoritesInterface;
@@ -17,11 +16,11 @@ public class ListingModule {
     MoviesListingInterface provideMovieListingInteractor(FavoritesInterface favoritesInterface,
                                                          TmdbWebService tmdbWebService,
                                                          SortingOptionStore sortingOptionStore) {
-        return new MoviesListingInteractorImpl(favoritesInterface, tmdbWebService, sortingOptionStore);
+        return new MoviesListingInterfacer(favoritesInterface, tmdbWebService, sortingOptionStore);
     }
 
     @Provides
-    MoviesListingPresenter provideMovieListingPresenter(MoviesListingInterface interactor) {
-        return new MoviesListingPresenterImpl(interactor);
+    sk.hello.movies.interfaces.MoviesListingPresenter provideMovieListingPresenter(MoviesListingInterface interactor) {
+        return new MoviesListingPresenter(interactor);
     }
 }
