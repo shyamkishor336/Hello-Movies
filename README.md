@@ -2,12 +2,12 @@
 
 # Features:
 
-Show Movies List in cardview
-Sorting by Popular, Highest rated movies, Newest
-Can add as Favorite
-Show Trailers and direct to youtube
-Show Reviews
-Show Ratings and release date
+1. Show Movies List in cardview
+2. Sorting by Popular, Highest rated movies, Newest
+3. Can add as Favorite
+4. Show Trailers and direct to youtube
+5. Show Reviews
+6. Show Ratings and release date
 
 
 This app showcases the MVP pattern, RxJava, Dagger 2 and Uncle Bob Martin's Clean Architecture approach.
