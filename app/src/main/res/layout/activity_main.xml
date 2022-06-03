@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <include layout="@layout/toolbar"/>
 
     <fragment
         android:id="@+id/fragment_listing"
-        android:name="sk.hello.movies.MoviesListingFragment"
+        android:name="sk.hello.movies.fragment.MoviesListingFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_movies"/>
