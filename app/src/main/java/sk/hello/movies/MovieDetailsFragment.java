@@ -201,12 +201,12 @@ public class MovieDetailsFragment extends Fragment implements MovieDetailsView, 
 
     @Override
     public void showFavorited() {
-        favorite.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_white_24dp));
+        favorite.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_baseline_favorite_24));
     }
 
     @Override
     public void showUnFavorited() {
-        favorite.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_favorite_border_white_24dp));
+        favorite.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_baseline_favorite_border_24));
     }
 
     @OnClick(R.id.favorite)

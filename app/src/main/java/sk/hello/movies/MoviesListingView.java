@@ -1,0 +1,13 @@
+package sk.hello.movies;
+
+import java.util.List;
+
+interface MoviesListingView {
+    void showMovies(List<Movie> movies);
+
+    void loadingStarted();
+
+    void loadingFailed(String errorMessage);
+
+    void onMovieClicked(Movie movie);
+}

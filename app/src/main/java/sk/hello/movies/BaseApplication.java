@@ -3,7 +3,10 @@ package sk.hello.movies;
 import android.app.Application;
 import android.os.StrictMode;
 
+
 import io.realm.Realm;
+
+
 
 
 public class BaseApplication extends Application {

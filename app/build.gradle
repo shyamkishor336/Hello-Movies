@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.application'
-    id 'realm-android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 def getProperty(String filename, String propName) {
     def propsFile = rootProject.file(filename)
@@ -17,14 +15,15 @@ def getProperty(String filename, String propName) {
         print(filename + " does not exist!")
     }
 }
+
 android {
-    compileSdkVersion 32
+    compileSdkVersion 31
     buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "sk.hello.movies"
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -32,11 +31,10 @@ android {
         buildConfigField "String", "TMDB_BASE_URL", "\"https://api.themoviedb.org/\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -48,6 +46,7 @@ android {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
         exclude 'META-INF/rxjava.properties'
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -60,6 +59,7 @@ ext {
     daggerVersion = '2.5'
     espressoVersion = '3.0.2'
 }
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -71,7 +71,6 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.test.espresso:espresso-idling-resource:3.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
     annotationProcessor("javax.annotation:javax.annotation-api:1.3.2")
     // Rx
     implementation 'io.reactivex.rxjava2:rxjava:2.2.14'
@@ -101,4 +100,19 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
     implementation 'com.squareup.retrofit2:converter-moshi:2.6.2'
+
+    // Tests
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:3.1.0'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation('androidx.test.espresso:espresso-contrib:3.1.0') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
 }
