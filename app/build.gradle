@@ -87,7 +87,6 @@ dependencies {
 
     // Other
     implementation 'net.jcip:jcip-annotations:1.0'
-    implementation 'com.google.guava:guava:18.0'
     implementation 'com.squareup.moshi:moshi:1.9.2'
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
@@ -102,18 +101,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
     implementation 'com.squareup.retrofit2:converter-moshi:2.6.2'
 
-    // Tests
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:3.1.0'
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    androidTestImplementation('androidx.test.espresso:espresso-contrib:3.1.0') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.android.support', module: 'appcompat'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude module: 'recyclerview-v7'
-    }
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test:rules:1.2.0'
+
 }
